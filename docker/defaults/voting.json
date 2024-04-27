@@ -1,0 +1,212 @@
+{
+  "maps": [
+    {
+      "displayName": "Standoff",
+      "mapName": "Bunkerworld"
+    },
+    {
+      "displayName": "Sandtrap",
+      "mapName": "Shrine"
+    },
+    {
+      "displayName": "Icebox",
+      "mapName": "s3d_turf"
+    },
+	{
+      "displayName": "Reactor",
+      "mapName": "s3d_reactor"
+    },
+    {
+      "displayName": "Narrows",
+      "mapName": "Chill"
+    },
+    {
+      "displayName": "High Ground",
+      "mapName": "Deadlock"
+    },
+    {
+      "displayName": "Last Resort",
+      "mapName": "Zanzibar"
+    },
+    {
+      "displayName": "Valhalla",
+      "mapName": "riverworld"
+    },
+    {
+      "displayName": "The Pit",
+      "mapName": "Cyberdyne"
+    },
+    {
+      "displayName": "Guardian",
+      "mapName": "guardian"
+    },
+    {
+      "displayName": "Diamondback",
+      "mapName": "s3d_avalanche"
+    }
+  ],
+  "types": [
+    {
+      "displayName": "Team BRs",
+      "typeName": "Team BRs",
+	  "randomChance": 5,
+      "commands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"]
+    },
+    {
+      "displayName": "1v1 Slayer",
+      "typeName": "Slayer",
+	  "minPlayersAllowed": 2,
+	  "maxPlayersAllowed": 2,
+      "commands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"],
+	  "specificMaps": [
+        {
+          "displayName": "Guardian",
+          "mapName": "guardian"
+        }
+	  ]
+    },
+	{
+      "displayName": "Team Slayer",
+      "typeName": "Team Slayer",
+      "commands": ["Server.Sprint 1", "Server.AssassinationEnabled 1", "Server.NumberOfTeams 4"],
+      "endOfMatchCommands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"]
+    },
+    {
+      "displayName": "Team SWAT",
+      "typeName": "Team SWAT",
+      "commands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"],
+      "specificMaps": [
+		{
+		  "displayName": "Valhalla",
+          "mapName": "Guardian (Swat)",
+          "maxPlayersAllowed": 8
+		},
+        {
+          "displayName": "Valhalla",
+          "mapName": "Valhalla (Swat)",
+		  "randomChance": 5
+        },
+        {
+          "displayName": "Standoff",
+          "mapName": "Standoff (Swat)"
+        },
+        {
+          "displayName": "Last Resort",
+          "mapName": "LastResortSwat"
+        },
+        {
+          "displayName": "Diamondback",
+          "mapName": "Diamondback (S)",
+		  "minPlayersAllowed": 8
+        },
+        {
+          "displayName": "High Ground",
+          "mapName": "HighGroundSwat"
+        }
+      ]
+    },
+	{
+      "modPack": "Mythic Mod",
+      "displayName": "Team Slayer",
+      "typeName": "team slayer",
+      "commands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"],
+	  "specificMaps": [
+		{
+		  "displayName": "Rat's Nest",
+		  "mapName": "armory"
+		},
+		{
+		  "displayName": "Cold Storage",
+		  "mapName": "chillout"
+		},
+		{
+		  "displayName": "Ghost Town",
+		  "mapName": "ghosttown"
+		},
+		{
+		  "displayName": "Sandbox",
+		  "mapName": "sandbox"
+		},
+		{
+		  "displayName": "Foundry",
+		  "mapName": "warehouse"
+		},
+		{
+		  "displayName": "SkyCastle",
+		  "mapName": "skycastle",
+		  "imageUrl": "http://example.com/skycastle.png"
+		}
+      ]
+    }
+  ],
+  "vetoPlaylist": [
+    {
+      "map": {
+        "displayName": "Standoff",
+        "mapName": "bunkerworld"
+      },
+      "type": {
+        "displayName": "Team King",
+        "typeName": "Team Crazy King",
+		"randomChance": 1,
+        "commands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"]
+      }
+    },
+	{
+      "map": {
+        "displayName": "Standoff",
+        "mapName": "bunkerworld"
+      },
+      "type": {
+        "displayName": "Team Slayer",
+        "typeName": "Team Slayer",
+        "randomChance": 3,
+        "commands": ["Server.Sprint 1", "Server.AssassinationEnabled 1", "Server.NumberOfTeams 2"],
+        "endOfMatchCommands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"]
+
+      }
+    },
+    {
+      "map": {
+        "displayName": "Guardian",
+        "mapName": "guardian",
+        "minPlayersAllowed": 2,
+        "maxPlayersAllowed": 2
+      },
+      "type": {
+        "displayName": "1v1 Slayer",
+        "typeName": "Slayer",
+        "commands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"]
+      }
+    },
+
+    {
+      "map": {
+        "displayName": "Snowbound",
+        "mapName": "snowbound"
+      },
+      "type": {
+		"modPack": "Mythic Mod",
+        "displayName": "Team BRs",
+        "typeName": "Team BRs",
+        "commands": ["Server.Sprint 1", "Server.AssassinationEnabled 1", "Server.NumberOfTeams 4"],
+        "endOfMatchCommands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"]
+      }
+    },
+    {
+      "map": {
+        "displayName": "Isolation",
+        "mapName": "isolation",
+        "imageUrl": "http://example.com/skycastle.png"
+      },
+      "type": {
+		"modPack": "Mythic Mod",
+        "displayName": "Team BRs",
+        "typeName": "Team BRs",
+        "minPlayersAllowed": 4,
+        "maxPlayersAllowed": 8,
+        "commands": ["Server.Sprint 2", "Server.AssassinationEnabled 0", "Server.NumberOfTeams 2"]
+      }
+    }
+  ]
+}

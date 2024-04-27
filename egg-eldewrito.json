@@ -1,0 +1,132 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2024-04-27T01:39:31-04:00",
+    "name": "ElDewrito",
+    "author": "haxzz@hpgnd.com",
+    "description": "ElDewrito dedicated server running on wine wrapped in a java launcher for console input\/output through RCON.",
+    "features": null,
+    "docker_images": {
+        "proferabg\/eldewrito-pterodactyl:latest": "proferabg\/eldewrito-pterodactyl:latest"
+    },
+    "file_denylist": [],
+    "startup": "java -jar ElDewLauncher.jar",
+    "config": {
+        "files": "{\r\n    \"data\/dewrito_prefs.cfg\": {\r\n        \"parser\": \"file\",\r\n        \"find\": {\r\n            \"Player.Name\": \"Player.Name \\\"{{server.build.env.PLAYER_NAME}}\\\"\",\r\n            \"Server.Name\": \"Server.Name \\\"{{server.build.env.SERVER_NAME}}\\\"\",\r\n            \"Server.Message\": \"Server.Message \\\"{{server.build.env.SERVER_MESSAGE}}\\\"\",\r\n            \"Server.Password\": \"Server.Password \\\"{{server.build.env.SERVER_PASSWORD}}\\\"\",\r\n            \"Server.MaxPlayers\": \"Server.MaxPlayers \\\"{{server.build.env.SERVER_MAX_PLAYERS}}\\\"\",\r\n            \"Server.Port\": \"Server.Port \\\"{{server.build.default.port}}\\\"\",\r\n            \"Server.GamePort\": \"Server.GamePort \\\"{{server.build.env.SERVER_GAME_PORT}}\\\"\",\r\n            \"Game.RconPort\": \"Game.RconPort \\\"{{server.build.env.SERVER_RCON_PORT}}\\\"\",\r\n            \"Server.RconPassword\": \"Server.RconPassword \\\"{{server.build.env.SERVER_RCON_PASSWORD}}\\\"\",\r\n            \"Server.SignalServerPort\": \"Server.SignalServerPort \\\"{{server.build.env.SERVER_SIGNAL_PORT}}\\\"\",\r\n            \"Server.FileServerPort\": \"Server.FileServerPort \\\"{{server.build.env.SERVER_FILE_PORT}}\\\"\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \"Server started!\"\r\n}",
+        "logs": "{\r\n    \"custom\": false,\r\n    \"location\": \"logs\/dorito.log\"\r\n}",
+        "stop": "kill-server"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash",
+            "container": "ghcr.io\/parkervcp\/installers:ubuntu",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Server Name",
+            "description": "Server name that shows in browser",
+            "env_variable": "SERVER_NAME",
+            "default_value": "Halo Online Dedicated Server",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:128",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Message",
+            "description": "Message that is displayed on server join",
+            "env_variable": "SERVER_MESSAGE",
+            "default_value": "Hello World!",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "string|max:256",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Password",
+            "description": "Password to join server",
+            "env_variable": "SERVER_PASSWORD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|regex:\/^[a-zA-Z0-9_]+$\/",
+            "field_type": "text"
+        },
+        {
+            "name": "Max Players",
+            "description": "The maximum amount of players that can join",
+            "env_variable": "SERVER_MAX_PLAYERS",
+            "default_value": "16",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|between:2,64",
+            "field_type": "text"
+        },
+        {
+            "name": "Game Port",
+            "description": "The game port for the server",
+            "env_variable": "SERVER_GAME_PORT",
+            "default_value": "11774",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|integer|between:1025,65535",
+            "field_type": "text"
+        },
+        {
+            "name": "RCON Port",
+            "description": "The rcon port for the server",
+            "env_variable": "SERVER_RCON_PORT",
+            "default_value": "11776",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|integer|between:1025,65535",
+            "field_type": "text"
+        },
+        {
+            "name": "RCON Password",
+            "description": "The password for rcon.",
+            "env_variable": "SERVER_RCON_PASSWORD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|regex:\/^[a-zA-Z0-9_]+$\/",
+            "field_type": "text"
+        },
+        {
+            "name": "Voice Port",
+            "description": "The voice port for the server",
+            "env_variable": "SERVER_SIGNAL_PORT",
+            "default_value": "11777",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|integer|between:1025,65535",
+            "field_type": "text"
+        },
+        {
+            "name": "File Port",
+            "description": "The file port for the server",
+            "env_variable": "SERVER_FILE_PORT",
+            "default_value": "11778",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "integer|between:1025,65535",
+            "field_type": "text"
+        },
+        {
+            "name": "Player Name",
+            "description": "Name of the player (host)",
+            "env_variable": "PLAYER_NAME",
+            "default_value": "Pterodactyl",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:64",
+            "field_type": "text"
+        }
+    ]
+}
